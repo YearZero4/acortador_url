@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acortador de URLs</title>
+</head>
+<body>
+    <h1>Acortador de URLs</h1>
+    <form method="POST">
+        <label for="url">Introduce la URL:</label>
+        <input type="text" name="url" id="url" required>
+        <button type="submit">Acortar</button>
+    </form>
+
+    {% if acortada %}
+        <p>URL acortada: <a href="{{ acortada }}" target="_blank">{{ acortada }}</a></p>
+    {% endif %}
+    {% if error %}
+        <p>Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
