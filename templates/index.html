@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acortador de URLs</title>
+<style>
+    body{
+        font-family: Calibri;
+    }
+.url{
+    width:50%;
+    border-radius: 5px;
+    padding:5px;
+    border:0;
+    text-align: center;
+}
+
+.btn{
+    cursor: pointer;
+    padding:5px;
+width:30%;
+}
+
+.acortada{
+    color: #37ff00;
+    text-decoration: none;
+
+}
+</style>
+</head>
+<body bgcolor="black" text="white"><center>
+    <h1>Acortador de URL</h1>
+    <form method="POST">
+        <label for="url">Introduce la URL:</label><p>
+        <input class="url" type="text" name="url" id="url" autocomplete="off" required><p>
+        <button class="btn" type="submit">Acortar</button>
+    </form>
+
+    {% if acortada %}
+        <p>URL acortada: <a class="acortada" href="{{ acortada }}" target="_blank">{{ acortada }}</a></p>
+    {% endif %}
+    {% if error %}
+        <p>Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
